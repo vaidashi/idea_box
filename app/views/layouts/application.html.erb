@@ -9,6 +9,16 @@
   </head>
 
   <body>
+
+  <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: "flash_#{type}" %>
+    <% end %>
+    <% if @user %>
+    Welcome, <%= @user.username %>
+    <%= link_to "Logout", logout_path, method: :delete %>
+  <% else %>
+
+  <% end %>
     <%= yield %>
   </body>
 </html>
