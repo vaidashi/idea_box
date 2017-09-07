@@ -11,6 +11,7 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
+
 always bundle
 rake db:create db:migrate
 rails s
