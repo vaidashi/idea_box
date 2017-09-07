@@ -11,7 +11,6 @@ describe "User can create a new idea" do
 
     visit user_path(user)
     click_on("Add a New Idea")
-
     expect(page).to have_content("Create a new idea")
     fill_in "idea[title]", with: "Make the next best thing"
     fill_in "idea[description]", with: "It's a secret"

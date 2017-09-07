@@ -19,4 +19,8 @@ RSpec.describe User, type: :model do
     expect(user.role).to eq("default")
     expect(user.default?).to be_truthy
   end
+
+  context "assocations" do
+    it { should have_many(:ideas) }
+  end
 end
