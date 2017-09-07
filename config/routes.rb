@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/categories', to: 'categories#index'
+
+  namespace :admin do
+    resources :categories
+  end
 end
