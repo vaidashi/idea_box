@@ -18,13 +18,19 @@ feature "When a user visits the categories page" do
     end
 
     scenario "they can create a category" do
-      xitadmin = User.create(username: "admin", password: "boom", role: "admin")
+      admin = User.create(username: "admin", password: "boom", role: "admin")
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit admin_categories_path
+      visit new_admin_category_path
+      expect(page).to have_content('Create a new Category')
 
-      expect(page).to have_content('Admin Categories')
+      fill_in 'category[name]', with: "Cleaning"
+      click_on("Create Category")
+
+      expect(current_path).to eq(admin_categories_path)
+      expect(Category.count).to eq(1)
+      expect(page).to have_content("Cleaning")
     end
   end
 
