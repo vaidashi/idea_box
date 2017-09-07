@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe "User can log in and out" do
   scenario "if account exists" do
-    # user = create(:user) ##look to figure out problem
     user = User.create(username: "Dude", password: "123")
     visit '/'
     click_on("Login")
