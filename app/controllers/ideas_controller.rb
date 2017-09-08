@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
     @user = User.find(params[:user_id])
     @idea = Idea.new(params[:id])
     # @category = Category.new
-    # @categories = Category.order(:name)
+    @categories = Category.order(:name)
   end
 
   def create
