@@ -3,12 +3,10 @@ class IdeasController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @idea = Idea.new(params[:id])
-    # @category = Category.new
     @categories = Category.order(:name)
   end
 
   def create
-    # @category = Category.all
     @user = User.find(params[:user_id])
     @idea = @user.ideas.new(idea_params)
     if @idea.save
@@ -20,10 +18,28 @@ class IdeasController < ApplicationController
     end
   end
 
+  def show
+    @idea = Idea.find(params[:id])
+  end
+
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+    @idea = Idea.find(params[:id])
+    @idea.update(idea_params)
+    if @idea.save
+      flash[:notice] = "Successful update for #{@idea.title}"
+      redirect_to user_idea_path(@idea.user, @idea)
+    else
+      render :edit
+    end
+  end
 
   private
 
   def idea_params
-    params.require(:idea).permit(:title, :description, :category_id)
+    params.require(:idea).permit(:title, :description, :category_id, image_ids: [])
   end
 end

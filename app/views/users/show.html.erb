@@ -4,7 +4,7 @@ Hi <%= @user.username %>
 <%= link_to "Add a New Idea", new_user_idea_path(@user) %>
 
 <p> <% @user.ideas.each do |idea| %>
-  <%= idea.title %> <br>
+  <%= link_to idea.title, user_idea_path(@user, idea) %> <br>
   <%= idea.description %>
   <% end %>
 </p>

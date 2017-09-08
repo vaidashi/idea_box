@@ -19,6 +19,6 @@ describe "User can add image" do
     click_on "Update Idea"
 
     expect(current_path).to eq(user_idea_path(user_1, user_1.ideas[0].id))
-    expect(page).to have_content(image.image_path)
+    expect(page).to have_css("img")
   end
 end

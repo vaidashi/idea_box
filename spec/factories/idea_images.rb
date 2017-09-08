@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :idea_image do
-    image nil
-    idea nil
+    image
+    idea 
   end
 end

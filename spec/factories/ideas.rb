@@ -1,8 +1,10 @@
 FactoryGirl.define do
   factory :idea do
-    title "My Idea's Title"
+    sequence(:title) do |n|
+     "My Idea's Title#{n}"
+   end
     description "My Idea's Description"
     category
-    user 
+    user
   end
 end
