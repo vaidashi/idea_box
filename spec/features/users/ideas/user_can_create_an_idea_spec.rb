@@ -17,7 +17,6 @@ describe "User can create a new idea" do
     select "Software Development", from: "idea[category_id]"
 
     click_button "Create"
-
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Make the next best thing")
     expect(user.ideas.count).to eq(1)

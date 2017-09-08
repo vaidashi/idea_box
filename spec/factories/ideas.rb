@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :idea do
-    title "MyString"
-    description "MyString"
-    category nil
-    user nil
+    title "My Idea's Title"
+    description "My Idea's Description"
+    category
+    user 
   end
 end
