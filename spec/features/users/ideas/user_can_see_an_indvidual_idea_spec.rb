@@ -1,9 +1,8 @@
 require 'rails_helper'
 
-describe "User can add image" do
-  scenario "and edit an idea of theirs" do
+describe "User can see an individual idea" do
+  scenario "on their idea show page" do
     user_1 = create(:user_with_ideas)
-    image  = create(:image)
 
     allow_any_instance_of(ApplicationController).to receive(
     :current_user).and_return(user_1)
@@ -12,13 +11,7 @@ describe "User can add image" do
 
     click_on "#{user_1.ideas[0].title}"
 
-    click_on "Edit"
-
-    check "#{image.name}"
-
-    click_on "Update Idea"
-
     expect(current_path).to eq(user_idea_path(user_1, user_1.ideas[0].id))
-    expect(page).to have_css("img")
+    expect(page).to have_content(user_1.ideas[0].description)
   end
 end
