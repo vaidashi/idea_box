@@ -19,6 +19,25 @@ feature "When a user visits the images page" do
       expect(page).to have_content(image2.name)
     end
 
+    scenario "they can create an image" do
+      admin = User.create(username: "admin", password: "boom", role: "admin")
+      image1 = create(:image)
+
+      allow_any_instance_of(ApplicationController).to receive(
+      :current_user).and_return(admin)
+
+      visit admin_images_path
+      click_on "Add a new image for Idea Box"
+      expect(current_path).to eq(new_admin_image_path)
+
+      fill_in 'image[name]', with: "BullDog Surfing"
+      fill_in 'image[image_path]', with: "https://theocbarkyard.files.wordpress.com/2015/09/surf.jpg"
+      click_on("Create Image")
+
+      expect(current_path).to eq(admin_images_path)
+      expect(Image.count).to eq(2)
+      expect(page).to have_content(Image.last.name)
+    end
 
   end
 end

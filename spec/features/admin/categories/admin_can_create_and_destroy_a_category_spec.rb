@@ -21,7 +21,8 @@ feature "When a user visits the categories page" do
     scenario "they can create a category" do
       admin = User.create(username: "admin", password: "boom", role: "admin")
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+      allow_any_instance_of(ApplicationController).to receive(
+      :current_user).and_return(admin)
 
       visit new_admin_category_path
       expect(page).to have_content('Create a new Category')
