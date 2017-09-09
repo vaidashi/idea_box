@@ -1,0 +1,10 @@
+<h1>Image Listing for Idea Box</h1>
+
+<ul>
+  <% @images.each do |image| %>
+  <%= image.name %> <br>
+  <img src= "<%= image.image_path %>" >
+
+  <%#= link_to "Delete" %>
+  <% end %>
+</ul>
