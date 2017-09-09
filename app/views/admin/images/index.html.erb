@@ -1,5 +1,7 @@
 <h1>Image Listing for Idea Box</h1>
 
+<%= link_to "Add a new image for Idea Box", new_admin_image_path %>
+
 <ul>
   <% @images.each do |image| %>
   <%= image.name %> <br>
