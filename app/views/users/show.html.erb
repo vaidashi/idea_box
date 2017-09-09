@@ -2,6 +2,7 @@
 Hi <%= @user.username %>
 
 <%= link_to "Add a New Idea", new_user_idea_path(@user) %>
+<%= link_to "See Image Listing", images_path %>
 
 <p> <% @user.ideas.each do |idea| %>
   <%= link_to idea.title, user_idea_path(@user, idea) %> <br>
