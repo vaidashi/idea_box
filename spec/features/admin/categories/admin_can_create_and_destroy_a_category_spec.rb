@@ -4,7 +4,7 @@ feature "When a user visits the categories page" do
   context "as an admin" do
 
     scenario "they can see list of all categories" do
-      admin = User.create(username: "admin", password: "boom", role: "admin")
+      admin     = User.create(username: "admin", password: "boom", role: "admin")
       category1 = create(:category)
       category2 = create(:category)
 
@@ -36,7 +36,7 @@ feature "When a user visits the categories page" do
     end
 
     scenario "they can destroy a category" do
-      admin = User.create(username: "admin", password: "boom", role: "admin")
+      admin     = User.create(username: "admin", password: "boom", role: "admin")
       category1 = create(:category)
       category2 = create(:category)
 
@@ -55,7 +55,7 @@ feature "When a user visits the categories page" do
     end
 
     scenario "they can edit a category" do
-      admin = User.create(username: "admin", password: "boom", role: "admin")
+      admin     = User.create(username: "admin", password: "boom", role: "admin")
       category1 = Category.create(name: "Fitness")
       category2 = create(:category)
 
@@ -79,5 +79,4 @@ feature "When a user visits the categories page" do
     end
 
   end
-
 end

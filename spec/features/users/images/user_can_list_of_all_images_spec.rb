@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "User can view list of all images" do
   scenario "from image index page" do
-    user = create(:user)
+    user   = create(:user)
     image1 = create(:image)
     image2 = create(:image)
 
@@ -21,7 +21,7 @@ describe "User can view list of all images" do
   end
 
   scenario "but can't create or delete an image" do
-    user = create(:user)
+    user   = create(:user)
     image1 = create(:image)
     image2 = create(:image)
 

@@ -1,8 +1,8 @@
 class IdeasController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
-    @idea = Idea.new(params[:id])
+    @user       = User.find(params[:user_id])
+    @idea       = Idea.new(params[:id])
     @categories = Category.order(:name)
   end
 
@@ -40,8 +40,9 @@ class IdeasController < ApplicationController
   def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
-      flash[:notice] = "You've successfully deleted your idea!"
-      redirect_to user_path(@idea.user)
+
+    flash[:notice] = "You've successfully deleted your idea!"
+    redirect_to user_path(@idea.user)
   end
 
   private

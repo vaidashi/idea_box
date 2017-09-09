@@ -3,7 +3,7 @@ require 'rails_helper'
 
 describe "User can view list of categories" do
   scenario "from categories index page" do
-    user = create(:user)
+    user      = create(:user)
     category1 = create(:category)
     category2 = create(:category)
 
@@ -19,7 +19,7 @@ describe "User can view list of categories" do
   end
 
   scenario "but can't create nor destroy a category" do
-    user = create(:user)
+    user      = create(:user)
     category1 = create(:category)
     category2 = create(:category)
 

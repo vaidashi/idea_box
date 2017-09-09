@@ -40,7 +40,7 @@ feature "When a user visits the images page" do
     end
 
     scenario "they can delete an image" do
-      admin = User.create(username: "admin", password: "boom", role: "admin")
+      admin  = User.create(username: "admin", password: "boom", role: "admin")
       image1 = create(:image)
       image2 = create(:image)
 
