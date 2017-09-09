@@ -1,5 +1,8 @@
 <h3>Image Listing for Idea Box</h3>
 
+<%= link_to "<< Back to your dashboard <<", user_path(current_user) %>
+
+
 <ul>
   <% @images.each do |image| %>
   <%= image.name %> <br>

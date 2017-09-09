@@ -1,7 +1,9 @@
 
+<br>
 Hi <%= @user.username %>
+<br>
 
-<%= link_to "Add a New Idea", new_user_idea_path(@user) %>
+<%= link_to "Add a New Idea", new_user_idea_path(@user) %><br>
 <%= link_to "See Image Listing", images_path %>
 
 <p> <% @user.ideas.each do |idea| %>
@@ -9,3 +11,10 @@ Hi <%= @user.username %>
   <%= idea.description %>
   <% end %>
 </p>
+
+
+
+<% if current_user.role == "admin" %>
+       <li><%= link_to "Category List", admin_categories_path %></li>
+       <li><%= link_to "Images List", admin_images_path %></li>
+       <% end %>
