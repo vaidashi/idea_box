@@ -7,6 +7,6 @@
   <%= image.name %> <br>
   <img src= "<%= image.image_path %>" >
 
-  <%#= link_to "Delete" %>
+  <%= link_to "Delete", admin_image_path(image), method: "delete"  %>
   <% end %>
 </ul>

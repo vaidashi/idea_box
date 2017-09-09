@@ -39,5 +39,25 @@ feature "When a user visits the images page" do
       expect(page).to have_content(Image.last.name)
     end
 
+    scenario "they can delete an image" do
+      admin = User.create(username: "admin", password: "boom", role: "admin")
+      image1 = create(:image)
+      image2 = create(:image)
+
+      allow_any_instance_of(ApplicationController).to receive(
+      :current_user).and_return(admin)
+
+      visit admin_images_path
+      expect(Image.count).to eq(2)
+      expect(page).to have_content(image1.name)
+      expect(page).to have_content(image2.name)
+
+      click_on("Delete", :match => :first)
+
+      expect(current_path).to eq(admin_images_path)
+      expect(Image.count).to eq(1)
+      expect(page).to have_content(image2.name)
+    end
+
   end
 end

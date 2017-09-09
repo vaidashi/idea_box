@@ -40,7 +40,8 @@ feature "When a user visits the categories page" do
       category1 = create(:category)
       category2 = create(:category)
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+      allow_any_instance_of(ApplicationController).to receive(
+      :current_user).and_return(admin)
 
       visit admin_categories_path
       expect(Category.count).to eq(2)
