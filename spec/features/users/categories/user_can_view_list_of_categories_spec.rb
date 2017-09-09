@@ -23,7 +23,8 @@ describe "User can view list of categories" do
     category1 = create(:category)
     category2 = create(:category)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    allow_any_instance_of(ApplicationController).to receive(
+    :current_user).and_return(user)
 
     visit new_admin_category_path
 
