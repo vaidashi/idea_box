@@ -37,6 +37,13 @@ class IdeasController < ApplicationController
     end
   end
 
+  def destroy
+    @idea = Idea.find(params[:id])
+    @idea.destroy
+      flash[:notice] = "You've successfully deleted your idea!"
+      redirect_to user_path(@idea.user)
+  end
+
   private
 
   def idea_params
