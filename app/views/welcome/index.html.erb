@@ -1,3 +1,56 @@
-<h1>Idea Box</h1> <br>
-<p>Make boxes of new ideas</p><br>
-<%= link_to "Create New Account", new_user_path %> | <%= link_to "Login", login_path %>
+
+<!-- <div class="container">
+	<div class="row">
+<div class="jumbotron">
+  <h1>Idea Box!</h1>
+  <p>Make boxes of new ideas</p>
+  <%#= link_to "Create New Account", new_user_path %> | <%#= link_to "Login", login_path %>
+</div>	</div>
+</div> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Idea Box</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Idea Box</h1>
+  <p>Make Boxes of New Ideas. Log in if already a member, or create a new user account!</p>
+  <ul>
+    <%= link_to "Create New Account", new_user_path %> | <%= link_to "Login", login_path %>
+  </div>
+  </ul>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>Freedom fries unconstitutional don’t mess with Texas Thomas Jefferson Kentucky bourbon. Uncle Sam moonshine Marlboro this is what we call the Muppet Show remember the Alamo. American football American justice roll that beautiful bean footage propane and propane accessories. Free market manifest destiny Monsanto tea party the south will rise again 187 on an undercover cop. Liberty 40 acres and a mule United we stand I did not have sexual relations with that woman. Day that will live in infamy Philly cheese steak coalition of the willing Budweiser. Git ‘er done M*A*S*H Dwayne “The Rock” Johnson G.I. Joe Mr. Gorbachev, tear down this wall. Wardrobe malfunction I wanna be like Mike security council veto KFC Double Down.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>Thomas Jefferson don’t mess with Texas series of tubes slavery if you dont like it you can git out. Ain't my first rodeo Harriet Tubman Walker, Texas Ranger John Wayne. Tom Cruise git ‘er done love it or leave it KFC Double Down roll that beautiful bean footage. Smallpox blanket manifest destiny security council veto NASA NASCAR. These colors don’t run Liberty Bell Oprah Fox Mulder coalition of the willing. American football Santorum Monsanto can you hear me now? CNN’s ratings are down. Tombstone piledriver crippling obesity epidemic little bighorn propane and propane accessories.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>
+      <p>George Bush does not care about black people Philly cheese steak Supreme Commander Allied Forces Europe Eisenhower. Liberty Bell I did not have sexual relations with that woman wardrobe malfunction. Y’all American justice NASA CNN’s ratings are down this is what we call the Muppet Show. McDonalds murrica love it or leave it unilateral military action climate change denial. I wanna be like Mike 40 acres and a mule can you hear me now? Marlboro.</p>
+    </div>
+
+
+<script>$( ".goku" ).click(function() {
+  $( ".gaa" ).toggle( "slow" );
+});</script>
+  </div>
+</div>
+
+</body>
+</html>
