@@ -52,3 +52,26 @@
  .wrapper {
      text-align: center;
  }
+
+ img {
+     display: block;
+     margin: 0 auto;
+ }
+
+.col-xs-12 {
+  text-align: center;
+
+}
+
+h1 {
+  border:0 solid #fff;
+  border-bottom-width:1px;
+  padding-bottom:10px;
+  text-align: center;
+ }
+
+.idea_description_page {
+  text-align: center;
+  background-color: #EDEDED;
+
+}
