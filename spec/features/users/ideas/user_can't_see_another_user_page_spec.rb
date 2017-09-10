@@ -10,8 +10,8 @@ describe "User can't visit another user's page" do
 
     visit user_path(user_2)
 
-    expect(page).to have_content("Hi #{user_1.username}")
-    expect(page).to_not have_content("Hi #{user_2.username}")
+    expect(page).to have_content("Welcome, #{user_1.username}")
+    expect(page).to_not have_content("Welcome, #{user_2.username}")
     expect(page).to_not have_content(user_2.ideas[0].description)
     expect(page).to_not have_content(user_2.ideas[1].description)
   end

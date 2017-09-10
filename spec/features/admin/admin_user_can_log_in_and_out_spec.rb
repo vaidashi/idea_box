@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "Admin user can log in and out" do
-  scenario "if accout exists" do
+  scenario "if account exists" do
     admin = User.create(username: "AdminDude", password: "abc", role: "admin")
 
     visit '/'
@@ -15,7 +15,7 @@ describe "Admin user can log in and out" do
     click_on("Login")
 
     expect(page).to have_content("Login Successful")
-    expect(page).to have_content("Hi #{admin.username}")
+    expect(page).to have_content("Welcome, #{admin.username}")
 
     expect(page).to have_link("Logout")
     click_on "Logout"

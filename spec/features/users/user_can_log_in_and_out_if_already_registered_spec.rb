@@ -14,7 +14,7 @@ describe "User can log in and out" do
     click_on "Login"
 
     expect(page).to have_content("Login Successful")
-    expect(page).to have_content("Hi #{user.username}")
+    expect(page).to have_content("Welcome, #{user.username}")
 
     expect(page).to have_link("Logout")
     click_on "Logout"

@@ -15,7 +15,7 @@ describe "User can create an account" do
     click_on("Create Account")
 
     expect(current_path).to eq user_path(User.last)
-    expect(page).to have_content("Hi Dude")
+    expect(page).to have_content("Welcome, Dude")
     expect(page).to have_content("Successful signup")
   end
 end
