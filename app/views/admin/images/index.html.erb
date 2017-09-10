@@ -1,6 +1,7 @@
 <h1>Image Listing for Idea Box</h1>
 
-<%= link_to "Add a new image for Idea Box", new_admin_image_path %>
+<%= link_to "Add a new image for Idea Box", new_admin_image_path %><br><br>
+<%= link_to "<< Back to your dashboard <<", user_path(current_user) %>
 
 <!-- <ul>
   <% @images.each do |image| %>
@@ -33,10 +34,3 @@
             </div>
         </div>
         <% end %>
-
-
-
-
-
-
-<%= link_to "<< Back to your dashboard <<", user_path(current_user) %>

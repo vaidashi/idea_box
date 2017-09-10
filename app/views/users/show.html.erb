@@ -4,9 +4,10 @@
 
 
        <header style="background-color:#378cba;margin-bottom: 0px;" class="navbar navbar-static-top" id="top" role="banner">
-         <div class="container">
+         <div class="ideas_title_container">
            Your Idea Box Ideas
          </div>
+
        </header>
 
        <div id="content">
@@ -15,29 +16,23 @@
            <%= link_to "See Image Listing", images_path %>
 
            <br><br>
-           Admin Privelages
            <% if current_user.role == "admin" %>
+           Admin Privelages
+
                   <li><%= link_to "Category List", admin_categories_path %></li>
                   <li><%= link_to "Images List", admin_images_path %></li>
                   <% end %>
          </div>
        </div>
 
-       <div class="container">
+       <div class="ideas_container">
          <div class="row">
-           <div style="background-color:#65c1f2;height:600px" class="col-md-9" role="main">
+           <div style="background-repeat: no-repeat; height: 500px; background-image: url(http://electricsaver1200.com/blog/wp-content/uploads/2013/11/Idea_images.png)" class="col-md-9" role="main">
              <p> <% @user.ideas.each do |idea| %>
                <%= link_to idea.title, user_idea_path(@user, idea) %> <br>
                <%= idea.description %><br><br>
                <% end %>
              </p>
            </div>
-
-
-
-
-       <footer style="height: 200px; background-color:#bbe2f7;" role="contentinfo">
-         <div class="container">
-           These are your own ideas, no one else can see them.
          </div>
-       </footer>
+       </div>

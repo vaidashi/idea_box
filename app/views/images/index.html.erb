@@ -3,9 +3,20 @@
 <%= link_to "<< Back to your dashboard <<", user_path(current_user) %>
 
 
-<ul>
-  <% @images.each do |image| %>
-  <%= image.name %> <br>
-  <img src= "<%= image.image_path %>" >
-  <% end %>
-</ul>
+<% @images.each do |image| %>
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail custom-height">
+              <h4 class="group inner list-group-item-heading">
+                  <%= "#{image.name}" %></h4>
+
+                <img class="group list-group-image" src=<%= "#{image.image_path}" %> alt="" />
+                <div class="caption">
+
+                    <p class="group inner list-group-item-text">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                        </div>
+                      </div>
+                    </div>
+                        <% end %>

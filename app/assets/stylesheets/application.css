@@ -25,6 +25,19 @@
      position: center;
  }
 
+ .ideas_title_container {
+   text-align: center;
+   padding: 25px;
+   position: center;
+ }
+
+.ideas_container {
+  text-align: center;
+
+}
+
+
+
  .form-login {
      background-color: #EDEDED;
      padding-top: 10px;
